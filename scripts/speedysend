@@ -1,0 +1,2 @@
+#!/bin/bash
+tar -c $1 | ssh $2 'tar -xvf - -C $3'

@@ -1,0 +1,6 @@
+name=$1
+name=${name%.*}
+
+ffmpeg -i $1 out.mp3
+scp out.mp3 <snip>:/var/www/html/field-recordings/$name.mp3
+rm out.mp3

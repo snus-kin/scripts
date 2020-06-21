@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ~/documents/uni/
+files=$(find -name "*.pdf")
+zathura $(echo "$files" | rofi -dmenu -l 5 -p book)

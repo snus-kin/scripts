@@ -1,0 +1,23 @@
+#!/bin/bash
+cd ~/downloads/zip
+
+unzip_d () {
+    zipfile="$1"
+    zipdir=${1%.zip}
+    echo $zipfile
+    unzip -qd "$zipdir" "$zipfile"
+}
+for file in *.zip;
+do
+    unzip_d "$file"
+done
+
+for dir in */; do
+    whatmp3 -s --FLAC --V0 --320 -o ~/music/files/Torrent -O ~/downloads/torrents_generated -t <snip> "${dir}"
+done
+
+rm *.zip
+
+beet import -iq .
+
+rm -r ~/downloads/zip/*

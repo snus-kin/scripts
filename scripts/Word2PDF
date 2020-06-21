@@ -1,0 +1,3 @@
+#!/bin/bash
+pandoc -o /tmp/documentconverted.pdf -f docx $1
+zathura /tmp/documentconverted.pdf

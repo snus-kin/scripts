@@ -1,2 +1,4 @@
 # scripts
-various scripts i've written for utility
+Various scripts I've written for utility
+
+Replaced personal info with `<snip>`

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd ~/downloads
+# Max depth 1 here cos I don't want to fuck with unzipped stuff that might be in downloads
+
+#pictures
+find . -maxdepth 1 -iname "*.jpg" -exec mv -t ~/pictures {} +
+find . -maxdepth 1 -iname "*.jpeg" -exec mv -t ~/pictures {} +
+find . -maxdepth 1 -iname "*.gif" -exec mv -t ~/pictures {} +
+find . -maxdepth 1 -iname "*.png" -exec mv -t ~/pictures {} +
+find . -maxdepth 1 -iname "*.bmp" -exec mv -t ~/pictures {} +
+#pdf
+find . -maxdepth 1 -iname "*.pdf" -exec mv -t ~/documents/misc {} +
+#zips
+find . -maxdepth 1 -iname "*.zip" -exec mv -t ~/downloads/zip {} +
