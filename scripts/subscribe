@@ -1,0 +1,17 @@
+#!/bin/bash
+# grab the channel id
+channelid=$(wget --quiet -O - "$1" | grep -oP '\"externalId\":"\K[^"]+')
+
+if [ -z "$channelid" ]
+    then
+        >&2 echo "ERROR: Could not find channel id. Perhaps youtube has changed format"
+        exit 1
+fi
+
+# feeds are in the format:
+# https://www.youtube.com/feeds/videos.xml?<channel id>
+# also i add 'youtube' tag for newsboat tagging
+rssLine="https://www.youtube.com/feeds/videos.xml?channel_id=$channelid youtube"
+
+# then add it to the list
+sed -i "/^\"\-\-\- Youtube.*/a $rssLine" ~/.config/newsboat/urls
