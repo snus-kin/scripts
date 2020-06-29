@@ -1,6 +1,6 @@
 #!/bin/bash
 # grab the channel id
-channelid=$(wget --quiet -O - "$1" | grep -oP '\"externalId\":"\K[^"]+')
+channelid=$(wget --quiet -O - "$1" | grep -oP '\"externalId\":\"\K[^"]+\"')
 
 if [ -z "$channelid" ]
     then
